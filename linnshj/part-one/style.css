@@ -8,22 +8,21 @@
 
 body {
     background-color: lightslategray;
-    /*
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    */
+    
 }
 
 .container {
 
     background-color: white;
-    max-width: 92%;
-    width: 600px;
-    height: 1050px;
+    width: 650px;
+    height: 1000px;
     padding: 16px;
     border-radius: 50px;
+    margin: 5px auto;
 }
 
 .header {
@@ -34,7 +33,8 @@ body {
     font-size: 54px;
     color: darkslategray;
     font-weight: bold;
-    margin: 16px 0;;
+    margin: 16px 0;
+    line-height: 1;
 }
 
 .header h2 {
@@ -47,7 +47,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
-    padding: 16px;
+    padding: 28px;
 
 }
 
@@ -84,7 +84,7 @@ h3 {
 
 .left ul dt {
     font-style: italic;
-}
+}  
 
 .left ul p {
     margin: 20px 0;;
@@ -99,7 +99,27 @@ h3 {
     line-height: 3;
 }
 
+.footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 16px;
+    padding: 16px;
+}
 
+.footer hr {
+    height: 5px;
+}
+
+.long-line {
+    flex: 5;
+    background-color: darkslategray;
+}
+
+.short-line {
+    flex: 2;
+    background-color: lightslategray;
+}
 
 @media (max-width: 800px) {
     .container {
@@ -114,8 +134,8 @@ h3 {
     }
 }
 
-@media (max-width: 500px) {
-    .container {
+@media (max-width: 480px) {
+    .two-column-layout {
         grid-template-columns: 1fr;
     }
     h1 {
@@ -124,5 +144,10 @@ h3 {
     
     h2 {
         font-size: 22px;
+    }
+
+    .container {
+        width: 98%;
+        height: auto;
     }
 }
