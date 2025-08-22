@@ -20,8 +20,8 @@ body {
 
     background-color: white;
     max-width: 92%;
-    width: 800px;
-    height: 1250px;
+    width: 600px;
+    height: 1050px;
     padding: 16px;
     border-radius: 50px;
 }
@@ -31,13 +31,14 @@ body {
 }
 
 .header h1 {
-    font-size: 68px;
+    font-size: 54px;
     color: darkslategray;
-    font-style: bold;
+    font-weight: bold;
+    margin: 16px 0;;
 }
 
 .header h2 {
-    font-size: 36px;
+    font-size: 32px;
     color: darkslategray;
     font-style: italic;
 }
@@ -65,15 +66,16 @@ body {
     color: darkslategray;
 }
 
+h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 30px 0;
+
+}
+
 .left {
     flex: 1;
     padding: 30px;
-}
-
-h3 {
-    text-transform: uppercase;
-    margin: 30px 0;
-
 }
 
 .left ul li {
@@ -85,7 +87,7 @@ h3 {
 }
 
 .left ul p {
-    margin: 25px 0;;
+    margin: 20px 0;;
 }
 
 .right {
@@ -94,7 +96,7 @@ h3 {
 }
 
 .right p {
-    line-height: 2;
+    line-height: 3;
 }
 
 
