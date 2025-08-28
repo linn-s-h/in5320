@@ -1,4 +1,14 @@
 
+//Function that returns an element that starts with a searched word
+function startWithSearchWord(element, searchWord) {
+    return element.startsWith(searchWord);
+}
+
+//Function returns list with words that fulfill startWithSearchWord(element, searchWord)
+function filterListBySearchWord(list, searchWord) {
+    return list.filter(item => startWithSearchWord(item, searchWord)); //Checks each element in array
+}
+
 function addCurrency(currencyName) {
     if (currencyName.trim() === "") return;
 
