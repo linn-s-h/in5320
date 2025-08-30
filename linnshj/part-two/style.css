@@ -16,23 +16,30 @@ h1 {
     margin-bottom: 16px;
     color: white;
 
-
 }
 
 .container {
     background-color: white;
     width: 250px;
-    height: 250px;
+    min-height: 250px;
     margin: 16px 0;
     padding: 16px;
     text-align: center;
 }
 
-input[type="text"] {
+.currencyInput {
     width: 150px;
     height: 50px;
     padding-left: 16px;
     margin-bottom: 5px;
+}
+
+
+.searchInput {
+    width: 100%;
+    height: 40px;
+    padding-left: 16px;
+    box-sizing: border-box;
 }
 
 button { 
@@ -51,8 +58,7 @@ ul {
     list-style-type: disc;
     text-align: left;
     padding-left: 28px;
-    margin-top: 16px;
-    border-radius: 8px;
+    margin: 0;
  
 }
 
@@ -60,6 +66,7 @@ li {
     padding: 5px 0;
     font-size: 1em;
     color: #333;
+
 }
 
 .deleteButton {
