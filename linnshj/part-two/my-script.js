@@ -1,4 +1,5 @@
 
+
 function addCurrency(currencyName) {
     if (currencyName.trim() === "") return;
 

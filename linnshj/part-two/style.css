@@ -16,6 +16,7 @@ h1 {
     margin-bottom: 16px;
     color: white;
 
+
 }
 
 .container {
@@ -33,7 +34,7 @@ input[type="text"] {
     padding-left: 16px;
 }
 
-button {
+button { 
     width: 75px;
     height: 50px;
     cursor: pointer;
