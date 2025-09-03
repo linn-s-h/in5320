@@ -21,7 +21,7 @@ body {
 
     background-color: white;
     width: 650px;
-    height: 1000px;
+    height: 1125px;
     padding: 16px;
     border-radius: 50px;
     margin: 5px auto;
@@ -31,6 +31,38 @@ body {
 
 .header {
     text-align: left;
+}
+
+.header ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+    padding: 0;
+    gap: 12px;
+}
+
+.header ul li {
+    list-style-type: none;
+    background-color: darkslategray;
+    margin: 0 10px;
+    padding: 10px 10px;
+    border-radius: 32px;
+}
+
+.header ul li:hover {
+    background-color: teal;
+    transform: scale(1.01);
+    cursor: pointer;
+}
+
+.header ul li a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    display: block;
+    
 }
 
 .header h1 {
@@ -110,7 +142,7 @@ h3 {
     flex-direction: row;
     width: 100%;
     gap: 16px;
-    padding: 16px;
+    padding: 0 16px;
 }
 
 
@@ -133,6 +165,15 @@ h3 {
 @media (max-width: 800px) {
     .container {
         grid-template-columns: 1fr;
+        width: 98%;
+        height: auto;
+    }
+    .header ul {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .header ul li {
+        margin: 5px 0;
     }
     h1 {
         font-size: 52px;
@@ -145,8 +186,19 @@ h3 {
 
 /* Resposive design - Mobile version */
 @media (max-width: 480px) {
+    .container {
+        width: 98%;
+        height: auto;
+    }
     .two-column-layout {
         grid-template-columns: 1fr;
+    }
+    .header ul {
+        flex-direction: column;
+    }
+    .header ul li {
+        margin: 5px 0;
+        text-align: center;
     }
     h1 {
         font-size: 34px;
@@ -154,10 +206,5 @@ h3 {
     
     h2 {
         font-size: 22px;
-    }
-
-    .container {
-        width: 98%;
-        height: auto;
     }
 }
