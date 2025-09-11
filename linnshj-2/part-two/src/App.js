@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Table from "./Table.js";
 import SearchBar from "./SearchBar.js";
+import ResultsPerPage from "./ResultsPerPage.js";
 
 function App() {
   /* Create state:
@@ -13,6 +14,7 @@ function App() {
   const [apiData, setApiData] = useState([]);
   const [searchQuery, setSearchQuery] = useState(""); // Default = No search query
   const [pageNumber, setPageNumber] = useState(1); //Default = Page 1
+  const [resultsPerPage, setResultsPerPage] = useState(10); //Default = 10 results
 
   useEffect(() => {
     // All parameters are appended to this URL.
@@ -25,6 +27,7 @@ function App() {
 
     // Add what page we are requesting to the API request.
     apiQuery = apiQuery + "&page=" + pageNumber;
+    apiQuery += "&pageSize=" + resultsPerPage;
 
     // Query data from API.
     console.log("Querying: " + apiQuery);
@@ -34,13 +37,14 @@ function App() {
         // Then add response to state.
         setApiData(data);
       });
-  }, [searchQuery, pageNumber]); // Array containing which state changes that should re-reun useEffect()
+  }, [searchQuery, pageNumber, resultsPerPage]); // Array containing which state changes that should re-reun useEffect()
 
   return (
     <div className="App">
       <h1>Country lookup</h1>
       <SearchBar onSearch={setSearchQuery} />
       <Table apiData={apiData} />
+      <ResultsPerPage perPage={resultsPerPage} onChange={setResultsPerPage} />
     </div>
   );
 }
