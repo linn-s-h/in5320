@@ -3,6 +3,7 @@ import "./App.css";
 import Table from "./Table.js";
 import SearchBar from "./SearchBar.js";
 import ResultsPerPage from "./ResultsPerPage.js";
+import Pagination from "./Pagination.js";
 
 function App() {
   /* Create state:
@@ -15,6 +16,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState(""); // Default = No search query
   const [pageNumber, setPageNumber] = useState(1); //Default = Page 1
   const [resultsPerPage, setResultsPerPage] = useState(10); //Default = 10 results
+  const totalPages = apiData.pager ? apiData.pager.pageCount : 1;
 
   useEffect(() => {
     // All parameters are appended to this URL.
@@ -44,6 +46,11 @@ function App() {
       <h1>Country lookup</h1>
       <SearchBar onSearch={setSearchQuery} />
       <Table apiData={apiData} />
+      <Pagination 
+        pageNumber={pageNumber}
+        totalPages={totalPages} 
+        onPageChange={setPageNumber}
+      />
       <ResultsPerPage perPage={resultsPerPage} onChange={setResultsPerPage} />
     </div>
   );
