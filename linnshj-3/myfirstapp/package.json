@@ -16,6 +16,6 @@
     "react-dom": "18"
   },
   "devDependencies": {
-    "@dhis2/cli-app-scripts": "^12.7.2"
+    "@dhis2/cli-app-scripts": "^12.8.0"
   }
 }
