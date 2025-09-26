@@ -48,7 +48,7 @@ function App() {
       <Table apiData={apiData} />
       <Pagination 
         pageNumber={pageNumber}
-        totalPages={totalPages} 
+        totalPages={totalPages}  
         onPageChange={setPageNumber}
       />
       <ResultsPerPage perPage={resultsPerPage} onChange={setResultsPerPage} />

@@ -1,5 +1,6 @@
 import './App.css';
 import { getImageUrl } from './utils.js'
+import React, { useState } from 'react';
 
 /*
 const person = {
@@ -54,7 +55,7 @@ function App() {
 }
 
 export default App;
-*/
+
 
 export default function Gallery() {
   return (
@@ -111,3 +112,11 @@ export default function Gallery() {
     </div>
   );
 }
+*/
+
+function Example() {
+
+  const [count, setCount] = useState(0);
+  
+}
+
