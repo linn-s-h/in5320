@@ -3,14 +3,14 @@ import { useDataQuery } from '@dhis2/app-runtime';
 import {Menu, MenuItem, Table, TableHead, TableBody, TableRow, TableCell, Tab} from "@dhis2/ui"
 
 const request = {
-    request0: {
-      resource: "dataSets",
-      params: {
-        fields: "id,displayName,created",
-        paging: "false"
-      }
+  request0: {
+    resource: "dataSets",
+    params: {
+      fields: "id,displayName,created",
+      paging: "false"
     }
   }
+}
 
 export function Datasets() {
 
