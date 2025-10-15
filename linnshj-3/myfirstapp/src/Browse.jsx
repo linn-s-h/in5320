@@ -1,20 +1,32 @@
 import React from "react";
 import { useDataQuery } from '@dhis2/app-runtime';
-import {Table, TableHead, TableBody, TableRow, TableCell, Tab} from "@dhis2/ui"
+import {Menu, MenuItem, Table, TableHead, TableBody, TableRow, TableCell} from "@dhis2/ui"
 
-const request = {
-  request0: {
-    resource: "dataSets",
-    params: {
-      fields: "displayName,id",
-      paging: "false"
-    }
-  }
+const dataQuery = {
+  dataSets: {
+      resource: 'dataSets/aLpVgfXiz0f',
+      params: {
+          fields: [
+              'name',
+              'id',
+              'dataSetElements[dataElement[id, displayName]',
+          ],
+      },
+  },
+  dataValueSets: {
+      resource: 'dataValueSets',
+      params: {
+          orgUnit: 'KiheEgvUZ0i',
+          dataSet: 'aLpVgfXiz0f',
+          period: '2020',
+      },
+  },
 }
+
 
 export function Browse() {
 
-  const { loading, error, data } = useDataQuery(request)
+  const { loading, error, data } = useDataQuery(dataQuery)
 
   if (error) {
     return <span>ERROR: {error.message}</span>
@@ -28,7 +40,7 @@ if (data) {
 
   console.log("API response:",data)
 
-  const items = data?.request0?.dataSets || []
+  const items = data?.dataSets?.dataSetElements || [];
 
   return (
     <div style={{display: "flex", gap: "16px"}}>
@@ -42,10 +54,10 @@ if (data) {
         </TableHead>
         <TableBody>
           {items.map((item) => (
-            <TableRow key={item.id}>
-              <TableCell>{item.displayName}</TableCell>
-              <TableCell>{item.id}</TableCell>
-              <TableCell>{item.id}</TableCell>
+            <TableRow key={item.dataElement.id}>
+              <TableCell>{item.dataElement.displayName}</TableCell>
+              <TableCell>{item.dataElement.id}</TableCell>
+              <TableCell>{item.dataElement.id}</TableCell>
             </TableRow>
           ))}
         </TableBody>
@@ -56,3 +68,4 @@ if (data) {
   );
 }
 }
+
