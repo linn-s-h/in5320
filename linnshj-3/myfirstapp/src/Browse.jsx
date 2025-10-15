@@ -40,7 +40,22 @@ if (data) {
 
   console.log("API response:",data)
 
-  const items = data?.dataSets?.dataSetElements || [];
+  //Get dataset elements (structure)
+  const dataSetsItems = data?.dataSets?.dataSetElements || []
+  //Get recorded values (dataValues)
+  const dataValueSetsItems = data?.dataValueSets?.dataValues || []
+
+   //Map elements to their values 
+  const items = dataSetsItems.map((item) => {
+    const match = dataValueSetsItems.find(
+      (v) => v.dataElement === item.dataElement.id
+    )
+    return {
+      displayName: item.dataElement.displayName,
+      id: item.dataElement.id,
+      value: match ? match.value : "—"
+    }
+  })
 
   return (
     <div style={{display: "flex", gap: "16px"}}>
@@ -54,10 +69,10 @@ if (data) {
         </TableHead>
         <TableBody>
           {items.map((item) => (
-            <TableRow key={item.dataElement.id}>
-              <TableCell>{item.dataElement.displayName}</TableCell>
-              <TableCell>{item.dataElement.id}</TableCell>
-              <TableCell>{item.dataElement.id}</TableCell>
+            <TableRow key={item.id}>
+              <TableCell>{item.displayName}</TableCell>
+              <TableCell>{item.value}</TableCell>
+              <TableCell>{item.id}</TableCell>
             </TableRow>
           ))}
         </TableBody>
