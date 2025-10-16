@@ -1,6 +1,12 @@
 import React from "react";
 import { useDataQuery } from '@dhis2/app-runtime';
-import {Table, TableHead, TableBody, TableRow, TableCell} from "@dhis2/ui"
+import {
+  Table, 
+  TableHead, 
+  TableBody, 
+  TableRow, 
+  TableCell
+} from "@dhis2/ui"
 
 const dataQuery = {
   dataSets: {
